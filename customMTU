@@ -1,0 +1,6 @@
+#!/bin/sh
+MTU=1395
+if [ "$IFACE" = "ppp0" -a "$CONNECTION_ID" = "VPN_NAME" ]; then
+    echo "Set new MTU $MTU for interface ppp0"
+    sudo ifconfig ppp0 mtu $MTU
+fi
