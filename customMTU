@@ -1,4 +1,7 @@
 #!/bin/sh
+#Put file into directory /etc/network/if-up.d.
+#Network-manager will execute utility `run-parts` and run all scitpts from that directory.
+#NB: don't use any file extention because script will be ignored
 MTU=1395
 if [ "$IFACE" = "ppp0" -a "$CONNECTION_ID" = "VPN_NAME" ]; then
     echo "Set new MTU $MTU for interface ppp0"
